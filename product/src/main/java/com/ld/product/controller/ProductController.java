@@ -5,13 +5,12 @@ import com.ld.product.VO.ProductVO;
 import com.ld.product.VO.ResultVO;
 import com.ld.product.dataobject.ProductCategory;
 import com.ld.product.dataobject.ProductInfo;
+import com.ld.product.dto.CartDTO;
 import com.ld.product.service.ProductCategoryService;
 import com.ld.product.service.ProductInfoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,5 +65,21 @@ public class ProductController {
         resultVO.setMsg("成功");
         resultVO.setData(productVOList);
         return resultVO;
+    }
+
+    /**
+     * 根据产品id返回产品详情(用于订单功能)
+     * @param productIdList
+     * @return
+     */
+    @PostMapping("/listForOrder")
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
+        List<ProductInfo> productInfoList = new ArrayList<>();
+        productInfoList = this.productInfoService.findAllById(productIdList);
+        return productInfoList;
+    }
+    @PostMapping("/deductStock")
+    public void deductStock(@RequestBody List<CartDTO> cartDTOList){
+        this.productInfoService.deductStock(cartDTOList);
     }
 }
