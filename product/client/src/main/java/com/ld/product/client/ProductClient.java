@@ -2,7 +2,7 @@ package com.ld.product.client;
 
 import com.ld.product.common.DeductStockInPut;
 import com.ld.product.common.ProductInfoOutPut;
-import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 

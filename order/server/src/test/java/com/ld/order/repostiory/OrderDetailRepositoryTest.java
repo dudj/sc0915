@@ -1,9 +1,8 @@
 package com.ld.order.repostiory;
 
-import static org.junit.jupiter.api.Assertions.*;
 import com.ld.order.OrderApplicationTests;
 import com.ld.order.dataobject.OrderDetail;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

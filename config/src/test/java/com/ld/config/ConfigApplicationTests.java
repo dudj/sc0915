@@ -1,10 +1,11 @@
-package com.ld.order;
+package com.ld.config;
+
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class OrderApplicationTests {
+class ConfigApplicationTests {
 
     @Test
     void contextLoads() {

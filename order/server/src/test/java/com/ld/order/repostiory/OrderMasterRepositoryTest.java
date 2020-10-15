@@ -4,14 +4,12 @@ import com.ld.order.OrderApplicationTests;
 import com.ld.order.dataobject.OrderMaster;
 import com.ld.order.enums.OrderStatusEnum;
 import com.ld.order.enums.PayStatusEnum;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Component
 class OrderMasterRepositoryTest  extends OrderApplicationTests {

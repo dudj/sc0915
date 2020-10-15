@@ -3,7 +3,7 @@ package com.ld.product.service;
 import com.ld.product.common.DeductStockInPut;
 import com.ld.product.dataobject.ProductInfo;
 import com.ld.product.dto.CartDTO;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.ld.product.ProductApplicationTests;

@@ -1,7 +1,7 @@
 package com.ld.product.repository;
 
 import com.ld.product.dataobject.ProductCategory;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
