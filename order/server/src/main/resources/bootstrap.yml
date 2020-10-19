@@ -7,3 +7,8 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: sc0915dev
+    stream:
+      bindings:
+        myMessage:
+          group: order
+          content-type: application/json
