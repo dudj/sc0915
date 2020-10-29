@@ -3,6 +3,7 @@ package com.ld.order.controller;
 import com.ld.order.VO.ResultVO;
 import com.ld.order.converter.OrderVerifyToOrderDTOConverter;
 import com.ld.order.dto.OrderDTO;
+import com.ld.order.enums.OrderStatusEnum;
 import com.ld.order.enums.ResultEnum;
 import com.ld.order.exception.OrderException;
 import com.ld.order.service.OrderService;
@@ -12,10 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
@@ -53,5 +51,9 @@ public class OrderController {
         Map map = new HashMap<>();
         map.put("orderId",result.getOrderId());
         return ResultUtil.success(map);
+    }
+    @PostMapping("/finish")
+    public ResultVO finish(@RequestParam("orderId") String orderId){
+        return ResultUtil.success(this.orderService.finish(orderId));
     }
 }

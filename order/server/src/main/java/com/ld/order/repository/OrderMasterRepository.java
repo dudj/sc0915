@@ -1,4 +1,4 @@
-package com.ld.order.repostiory;
+package com.ld.order.repository;
 
 import com.ld.order.dataobject.OrderMaster;
 import org.springframework.data.jpa.repository.JpaRepository;

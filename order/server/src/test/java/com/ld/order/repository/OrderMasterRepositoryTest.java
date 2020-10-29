@@ -1,4 +1,4 @@
-package com.ld.order.repostiory;
+package com.ld.order.repository;
 
 import com.ld.order.OrderApplicationTests;
 import com.ld.order.dataobject.OrderMaster;
@@ -7,7 +7,6 @@ import com.ld.order.enums.PayStatusEnum;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
 
