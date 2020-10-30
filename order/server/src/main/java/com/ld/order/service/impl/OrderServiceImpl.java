@@ -94,7 +94,7 @@ public class OrderServiceImpl implements OrderService {
         }
         //2.判断订单状态
         OrderMaster orderMaster = orderMasterOptional.get();
-        if(OrderStatusEnum.NEW.getCode() != orderMaster.getOrderStatus()){
+        if(!OrderStatusEnum.NEW.getCode().equals(orderMaster.getOrderStatus())){
             throw new OrderException(ResultEnum.ORDER_STATUS_ERROR);
         }
         //3.修改订单状态

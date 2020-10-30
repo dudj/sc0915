@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -41,6 +42,7 @@ public class UserInfoController {
     public ResultVO buyer(@RequestParam("openid") String openid,
         HttpServletResponse response){
         ResultVO resultVO = new ResultVO();
+        log.warn("当前时间为:{},",new Date());
         log.info("买家端登录开始,openid为：{}",openid);
         try{
             //1.从数据库匹配数据
@@ -88,7 +90,7 @@ public class UserInfoController {
             }
             //3.给cookie设置token
             String token = UUID.randomUUID().toString();
-            CookieUtil.set(response, CookieConstant.TOKEN, UUID.randomUUID().toString(), expire);
+            CookieUtil.set(response, CookieConstant.TOKEN, token, expire);
             //4.将token的值 作为键 设置到redis中
             stringRedisTemplate.opsForValue().set(String.format(RedisConstant.TOKEN_TEMPLATE, token), openid, expire, TimeUnit.SECONDS);
         }catch (Exception e){
