@@ -16,3 +16,5 @@ v0.5 使用SpringCloud Stream 操作消息队列、RabbitMQ使用之spring-boot-
 v0.6 使用mq进行商品和订单之间 扣库存的逻辑 使用到json互相转换数据和数据存储到redis等
 
 v0.7 zuul 前置和post过滤器包括限流使用，模拟买卖家登录存放数据，完成订单完结接口
+
+v0.8 zuul权限校验，跨域等

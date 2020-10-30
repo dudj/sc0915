@@ -26,6 +26,6 @@ public class CorsConfig {
         config.setAllowedOrigins(Arrays.asList("*"));
         config.setMaxAge(300L);
         source.registerCorsConfiguration("/**",config);
-        return new CorsFilter();
+        return new CorsFilter(source);
     }
 }
