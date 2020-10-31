@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 //@SpringBootApplication
 //@EnableDiscoveryClient
 //@EnableCircuitBreaker
-@EnableFeignClients(basePackages = "com.ld.product.client")
+@EnableFeignClients(basePackages = "com.ld.product.*")
 @SpringCloudApplication
 /**
  * SpringCloudApplication注解 包含了

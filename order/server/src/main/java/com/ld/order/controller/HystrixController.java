@@ -1,5 +1,6 @@
 package com.ld.order.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +12,11 @@ import java.util.Arrays;
 /**
  * 熔断、降级
  */
+@DefaultProperties(defaultFallback = "defaultFallback")
 public class HystrixController {
     @GetMapping("getProductList")
-    @HystrixCommand(defaultFallback = "fallback")
+//    @HystrixCommand(defaultFallback = "fallback")
+    @HystrixCommand
     /**
      * 不是服务之间调用不到，才会降级，自己的程序如果出现了异常也可以降级
      */
@@ -27,5 +30,8 @@ public class HystrixController {
     }
     public String fallback(){
         return "卧槽，人太多了，你等会吧！";
+    }
+    public String defaultFallback(){
+        return "默认提示：卧槽，人太多了，你等会吧！";
     }
 }
