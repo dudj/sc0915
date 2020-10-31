@@ -77,6 +77,11 @@ public class ProductController {
     @PostMapping("/listForOrder")
     public List<ProductInfoOutPut> listForOrder(@RequestBody List<String> productIdList){
         List<ProductInfoOutPut> productInfoList = new ArrayList<>();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         productInfoList = this.productInfoService.findAllById(productIdList);
         return productInfoList;
     }
