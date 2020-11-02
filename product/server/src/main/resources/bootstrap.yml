@@ -13,3 +13,6 @@ spring:
       profile: sc0915dev
 server:
   port: 8095
+feign:
+  hystrix:
+    enabled: true
