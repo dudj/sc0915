@@ -34,6 +34,11 @@ public class ProductController {
      */
     @GetMapping("/list")
     public ResultVO<ProductVO> list(){
+        /*try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         List<ProductInfo> infoList = this.productInfoService.findAllByStatus();
 
         List<Integer> categoryTypeList = infoList.stream()
