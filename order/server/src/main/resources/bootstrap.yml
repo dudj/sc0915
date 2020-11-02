@@ -12,6 +12,19 @@ spring:
         myMessage:
           group: order
           content-type: application/json
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    getProductList:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+
 server:
   port: 100
 management:
