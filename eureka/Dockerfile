@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.7
 
 ADD target/*.jar eureka.jar
 
@@ -6,4 +6,4 @@ ADD target/*.jar eureka.jar
 EXPOSE 8761
 
 #运行
-ENTRYPOINT ["java", "-jar", "eureka,jar"]
+ENTRYPOINT ["java", "-jar", "/eureka.jar"]
