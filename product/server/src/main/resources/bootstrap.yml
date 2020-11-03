@@ -3,6 +3,11 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 spring:
+  zipkin:
+    base-url: http://47.93.202.38:9411/
+  sleuth:
+    sampler:
+      percentage: 1
   application:
     name: product
   cloud:
@@ -13,6 +18,9 @@ spring:
       profile: sc0915dev
 server:
   port: 8095
+logging:
+  level:
+    org.springframework.cloud.netflix.feign: debug
 feign:
   hystrix:
     enabled: true

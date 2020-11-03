@@ -1,4 +1,9 @@
 spring:
+  zipkin:
+    base-url: http://47.93.202.38:9411/
+  sleuth:
+    sampler:
+      percentage: 1
   application:
     name: order
   cloud:
@@ -24,8 +29,10 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 1000
-
 server:
   port: 100
 management:
   context-path: /
+logging:
+  level:
+    org.springframework.cloud.netflix.feign: debug
