@@ -20,3 +20,5 @@ v0.7 zuul 前置和post过滤器包括限流使用，模拟买卖家登录存放
 v0.8 zuul权限校验，跨域等
 
 v0.9 hystrix 熔断 降级 包括错误时候 界面查看，以及feignHystrix的使用，超时配置等
+
+v1.0 rancher进行部署eureka和config，eureka的高可用

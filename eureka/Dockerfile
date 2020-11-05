@@ -1,9 +1,7 @@
-FROM alpine:3.7
+FROM hub.c.163.com/library/java:8-alpine
 
 ADD target/*.jar eureka.jar
 
-#声明端口
 EXPOSE 8761
 
-#运行
 ENTRYPOINT ["java", "-jar", "/eureka.jar"]
