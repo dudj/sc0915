@@ -36,3 +36,8 @@
 20200925 业务代码构造，订单和商品服务
 
 注意：windows和linux下的大小写区别
+
+
+java项目一些命令
+打包(跳过测试类，-U重新下载)：mvn clean package -Dmaven.test.skip=true -U
+根据active进行启动：java -jar -Dspring.profile.active=xxx target/*.jar
