@@ -1,3 +1,4 @@
+
 spring:
   zipkin:
     base-url: http://47.93.202.38:9411/
@@ -29,10 +30,14 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 1000
-server:
-  port: 100
 management:
   context-path: /
 logging:
   level:
     org.springframework.cloud.netflix.feign: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+  instance:
+    prefer-ip-address: true

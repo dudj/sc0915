@@ -6,9 +6,8 @@
         <groupId>com.ld</groupId>
         <artifactId>user</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>server</artifactId>
+    <artifactId>user-server</artifactId>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
