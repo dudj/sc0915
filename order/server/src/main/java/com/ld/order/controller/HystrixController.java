@@ -23,19 +23,20 @@ public class HystrixController {
 //            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")
 //    })
     //熔断配置
-    @HystrixCommand(commandProperties = {
+    /*@HystrixCommand(commandProperties = {
             @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
             @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
             @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")
-    })
+    })*/
     /**
      * 不是服务之间调用不到，才会降级，自己的程序如果出现了异常也可以降级
      */
+    @HystrixCommand
     public String getProductList(@RequestParam("num") Integer num){
         if(num % 2 == 0){
             RestTemplate restTemplate = new RestTemplate();
-            return restTemplate.postForObject("http://localhost:8095/product/listForOrder",
+            return restTemplate.postForObject("http://localhost:9090/product/listForOrder",
                     Arrays.asList("157875196366160022"),
                     String.class
             );

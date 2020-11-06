@@ -34,11 +34,11 @@ public class ProductController {
      */
     @GetMapping("/list")
     public ResultVO<ProductVO> list(){
-        /*try {
-            Thread.sleep(3000);
+        try {
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
         List<ProductInfo> infoList = this.productInfoService.findAllByStatus();
 
         List<Integer> categoryTypeList = infoList.stream()
@@ -82,11 +82,11 @@ public class ProductController {
     @PostMapping("/listForOrder")
     public List<ProductInfoOutPut> listForOrder(@RequestBody List<String> productIdList){
         List<ProductInfoOutPut> productInfoList = new ArrayList<>();
-        try {
+        /*try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         productInfoList = this.productInfoService.findAllById(productIdList);
         return productInfoList;
     }

@@ -20,7 +20,9 @@ spring:
       profile: sc0915dev
 logging:
   level:
-    org.springframework.cloud.netflix.feign: debug
+    org.springframework.cloud.openfeign: debug
 feign:
   hystrix:
     enabled: true
+server:
+  port: 9090
