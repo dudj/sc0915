@@ -24,3 +24,5 @@ v0.9 hystrix 熔断 降级 包括错误时候 界面查看，以及feignHystrix�
 v1.0 rancher进行部署eureka和config，eureka的高可用
 
 v1.1 rancher部署产品和订单服务，以及网关的高可用等
+
+v1.2 各个服务升级完成
