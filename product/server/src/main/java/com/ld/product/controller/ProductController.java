@@ -10,6 +10,7 @@ import com.ld.product.dataobject.ProductInfo;
 import com.ld.product.dto.CartDTO;
 import com.ld.product.service.ProductCategoryService;
 import com.ld.product.service.ProductInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/product")
+@Slf4j
 public class ProductController {
     @Autowired
     private ProductInfoService productInfoService;
@@ -81,6 +83,7 @@ public class ProductController {
      */
     @PostMapping("/listForOrder")
     public List<ProductInfoOutPut> listForOrder(@RequestBody List<String> productIdList){
+        log.info("根据产品id返回产品详情(用于订单功能)");
         List<ProductInfoOutPut> productInfoList = new ArrayList<>();
         /*try {
             Thread.sleep(2000);

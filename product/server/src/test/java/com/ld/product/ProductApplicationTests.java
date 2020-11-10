@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class ProductApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
     }
 
 }

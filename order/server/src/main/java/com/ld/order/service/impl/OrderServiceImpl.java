@@ -14,6 +14,7 @@ import com.ld.order.utils.KeyUtil;
 import com.ld.product.client.ProductClient;
 import com.ld.product.common.DeductStockInPut;
 import com.ld.product.common.ProductInfoOutPut;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMasterRepository orderMasterRepository;
@@ -50,8 +52,9 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
         String orderId = KeyUtil.generateUniqueKey();
-        //商品详情
+        //商品列表详情
         List<String> productIdList = orderDTO.getOrderDetailList().stream().map(OrderDetail::getProductId).collect(Collectors.toList());
+        log.info("获取商品列表详情");
         List<ProductInfoOutPut> productInfoList = this.productClient.listForOrder(productIdList);
 
         //扣库存
