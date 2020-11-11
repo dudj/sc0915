@@ -9,6 +9,8 @@ import com.ld.order.exception.OrderException;
 import com.ld.order.service.OrderService;
 import com.ld.order.utils.ResultUtil;
 import com.ld.order.verify.OrderVerify;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
@@ -28,12 +30,14 @@ import java.util.Map;
  * 2.收到请求redis判断是否库存充足，减掉redis中库存
  * 3.订单服务创建订单写入数据库，并发送消息
  */
+@Api(value = "OrderController", description = "订单")
 public class OrderController {
 
     @Autowired
     private OrderService orderService;
 
     @PostMapping("/create")
+    @ApiOperation(value = "创建订单")
     public ResultVO create(@Valid OrderVerify orderVerify, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             log.error("【创建订单】：参数有误，orderVerify={}",orderVerify);
