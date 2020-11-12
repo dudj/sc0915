@@ -28,3 +28,5 @@ v1.1 rancher部署产品和订单服务，以及网关的高可用等
 v1.2 各个服务升级完成
 
 v1.3 eureka-springboot集成graylog，测试
+
+v1.4 swagger-ui配置全局的接口界面，微服务即为多个服务，那不可能每一 个服务都对外提供一个文档，有了zuul网关，我们可以通过网关，进行各个服务之间的配置 以api-gateway(zuul网关服务)、config(配置中心)、product(产品服务)、user(用户服务)作为swagger多服务配置的包 order服务单独进行了配置
