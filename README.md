@@ -40,7 +40,9 @@
 
 java项目一些命令
 打包(跳过测试类，-U重新下载)：mvn clean package -Dmaven.test.skip=true -U
+
 根据active进行启动：java -jar -Dspring.profile.active=xxx target/*.jar
+
 linux下服务之间的依赖：
 mvn clean package -Dmaven.test.skip=true
 mvn install:install-file -DgroupId=com.ld -DartifactId=product-client -Dpackaging=jar -Dfile=./target/product-client-0.0.1-SNAPSHOT.jar
