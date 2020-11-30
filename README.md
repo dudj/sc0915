@@ -35,6 +35,10 @@
 
 20200925 业务代码构造，订单和商品服务
 
+
+tagExplain.md 各个tag标签升级的代码含义
+
+
 注意：windows和linux下的大小写区别
 
 
@@ -42,5 +46,8 @@ java项目一些命令
 打包(跳过测试类，-U重新下载)：mvn clean package -Dmaven.test.skip=true -U
 根据active进行启动：java -jar -Dspring.profile.active=xxx target/*.jar
 linux下服务之间的依赖：
+
 mvn clean package -Dmaven.test.skip=true
+
 mvn install:install-file -DgroupId=com.ld -DartifactId=product-client -Dpackaging=jar -Dfile=./target/product-client-0.0.1-SNAPSHOT.jar
+
