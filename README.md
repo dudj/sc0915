@@ -50,10 +50,5 @@ java项目一些命令
 linux下服务之间的依赖：
 
 mvn clean package -Dmaven.test.skip=true
-<<<<<<< HEAD
 
 mvn install:install-file -DgroupId=com.ld -DartifactId=product-client -Dpackaging=jar -Dfile=./target/product-client-0.0.1-SNAPSHOT.jar
-
-=======
-mvn install:install-file -DgroupId=com.ld -DartifactId=product-client -Dpackaging=jar -Dfile=./target/product-client-0.0.1-SNAPSHOT.jar
->>>>>>> c333fae437a035f93fc30bc179cf71442148c87a
